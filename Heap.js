@@ -24,8 +24,7 @@ class Heap {
                 if (this.heap[l] && (this.comparator(this.heap[c], this.heap[l]) > 0)
                     || this.heap[r] && (this.comparator(this.heap[c], this.heap[r]) > 0)) {
                     let t = (!this.heap[r] || this.comparator(this.heap[r], this.heap[l]) > 0)? l : r;
-                    [this.heap[t], this.heap[c]] = [this.heap[c], this.heap[t]];
-                    c = t;
+                    [this.heap[t], this.heap[c], c] = [this.heap[c], this.heap[t], t];
                 } else {
                     break;
                 }
@@ -40,8 +39,7 @@ class Heap {
         while (true) {
             let p = Math.floor((c-1)/2);
             if (c > 0 && (this.comparator(this.heap[c], this.heap[p]) < 0)) {
-                [this.heap[c], this.heap[p]] = [this.heap[p], this.heap[c]];
-                c = p;
+                [this.heap[c], this.heap[p], c] = [this.heap[p], this.heap[c], p];
             } else {
                 break;
             }
