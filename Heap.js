@@ -23,7 +23,7 @@ class Heap {
                 let r = c * 2 + 2;
                 if (this.heap[l] && (this.comparator(this.heap[c], this.heap[l]) > 0)
                     || this.heap[r] && (this.comparator(this.heap[c], this.heap[r]) > 0)) {
-                    let t = (!this.heap[r] || this.comparator(this.heap[r], this.heap[l]) > 0)? l : r;
+                    let t = (!this.heap[r] || this.comparator(this.heap[r], this.heap[l]) > 0) ? l : r;
                     [this.heap[t], this.heap[c], c] = [this.heap[c], this.heap[t], t];
                 } else {
                     break;
