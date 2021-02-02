@@ -45,8 +45,4 @@ class Heap {
             }
         }
     }
-    
-    toString() {
-        return this.heap + "";
-    }
 }
